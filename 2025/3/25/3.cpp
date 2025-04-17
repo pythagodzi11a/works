@@ -1,33 +1,22 @@
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-
-    char str[100];
-    int i, j, k, length, temp,wordCount,characterCount;
-    wordCount = 0;
-    characterCount = 0;
-    scanf("%s", str);
-
-    for (i = 0; i < 99; i++)
+#include <stdio.h> 
+ int main(){
+    char temp;
+    float result;
+    int wordCount = 0,characterCount = 0,fakeArray[1];
+    
+    while ( (temp = getchar()) != '\n' )
     {
-        if (str[i] == ' ' && str[i+1] != ' ' && str[i+1] != '\0')
+        if ( temp == ' ')
         {
             wordCount++;
         }
-
-        if (str[i] != ' ')
-        {
+        else{
             characterCount++;
         }
-
-        if (str[i] == '\0')
-        {
-            break;
-        }
-
     }
 
-    printf("%d %d",wordCount,characterCount);
-    return 0;
-}
+    result = (float)characterCount/(wordCount+1);
+
+    printf("%.2f",result);
+   
+ }
