@@ -3,7 +3,7 @@
 int main() {
 
     char str[1000],*pointer = str;
-    int count = 1,i=0;
+    int count = 0,i=0;
 
     while ((str[i] = getchar()) != '\n') {
         i++;
@@ -11,14 +11,13 @@ int main() {
     str[i] = '\0';
 
     while(*pointer != '\0') {
-        if (*pointer > 'z' || *pointer < 'a'){ //傻逼了加了等号
-            count = 0;
-            break;
+        if (*pointer == ' '){
+            count++;
         }
         pointer++;
     }
 
-    printf("%s", (count == 0) ? "FALSE" : "TRUE");
+    printf("%d", count);
 
     return 0;
 }
